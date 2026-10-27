@@ -2,13 +2,4 @@
    Instituto Florescer — Entrega II (CSS3)
    Arquivo principal: apenas importa os módulos, na ordem da cascata.
    ========================================================================== */
-@import url("base/variaveis.css");
-@import url("base/reset-tipografia.css");
-@import url("layout/grid.css");
-@import url("layout/navegacao.css");
-@import url("componentes/botoes.css");
-@import url("componentes/cards.css");
-@import url("componentes/badges-tags.css");
-@import url("componentes/formularios.css");
-@import url("componentes/feedback.css");
-@import url("responsivo.css");
+/* Os módulos são carregados por <link> em cada página HTML, na ordem: base, layout, componentes, responsivo. */
