@@ -1,4 +1,4 @@
-// Bruna Oliveira Santana
+// Vitor Hugo de Jesus Ribeiro
 
 
 document.addEventListener('DOMContentLoaded', function () {
