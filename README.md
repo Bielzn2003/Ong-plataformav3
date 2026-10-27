@@ -1,5 +1,7 @@
 # Instituto Florescer — Plataforma Web (Projeto Acadêmico)
 
+> **Entrega II — CSS3:** esta versão aplica um design system, layout responsivo com Flexbox/Grid, navegação com dropdown e menu hambúrguer e uma biblioteca de componentes. Veja [Entrega II](#entrega-ii--css3) e a página `guia-de-estilo.html`.
+
 Plataforma web institucional fictícia para uma ONG, desenvolvida como projeto
 acadêmico com foco principal em **HTML5 semântico**, preparada para receber,
 em etapas futuras da disciplina, aprofundamento em **CSS3** e **JavaScript**.
@@ -14,6 +16,7 @@ em etapas futuras da disciplina, aprofundamento em **CSS3** e **JavaScript**.
 ## Sumário
 
 - [Objetivo do projeto](#objetivo-do-projeto)
+- [Entrega II — CSS3](#entrega-ii--css3)
 - [Funcionalidades](#funcionalidades)
 - [Tecnologias utilizadas](#tecnologias-utilizadas)
 - [Estrutura de pastas](#estrutura-de-pastas)
@@ -42,6 +45,41 @@ uma plataforma web completa para uma ONG, contemplando:
 CSS3 e JavaScript foram utilizados apenas de forma simples e didática, pois
 ainda serão aprofundados em etapas futuras da disciplina.
 
+
+## Entrega II — CSS3
+
+| Requisito | Onde está |
+|---|---|
+| Design system com variáveis CSS | `assets/css/base/variaveis.css` |
+| Paleta com 15 cores (primárias, secundárias, neutras e de feedback) | `variaveis.css` |
+| Tipografia hierárquica (7 tamanhos) | `variaveis.css` e `base/reset-tipografia.css` |
+| Espaçamento modular (8, 16, 24, 32, 48, 64px) | `variaveis.css` (`--espaco-1` a `--espaco-8`) |
+| Leiaute principal com CSS Grid | `layout/grid.css` (`body` em grid: cabeçalho / conteúdo / rodapé) |
+| Flexbox em componentes internos | cabeçalho, botões, hero, cartões de projeto, alertas |
+| Grid customizado de 12 colunas | `.grade-12` e `.col-N`, `.col-sm-N`, `.col-md-N`, `.col-lg-N` |
+| 5 breakpoints | `responsivo.css`: 480, 640, 768, 1024 e 1280px |
+| Leiautes por tipo de conteúdo | cartões, galeria em mosaico, projeto (imagem + texto), indicadores, documentos |
+| Menu com submenu dropdown | `layout/navegacao.css` |
+| Menu hambúrguer (mobile) | `navegacao.css` + `script.js` |
+| Cards de projeto | `componentes/cards.css` |
+| Botões (hover, focus, active, disabled) | `componentes/botoes.css` |
+| Formulários com validação visual | `componentes/formularios.css` + `script.js` |
+| Alerts, toasts e modals | `componentes/feedback.css` + `script.js` |
+| Badges e tags | `componentes/badges-tags.css` |
+
+### Estrutura modular do CSS
+
+```
+assets/css/
+├── style.css            (importa todos os módulos)
+├── base/                (variaveis.css, reset-tipografia.css)
+├── layout/              (grid.css, navegacao.css)
+├── componentes/         (botoes, cards, badges-tags, formularios, feedback)
+└── responsivo.css
+```
+
+O JavaScript foi usado apenas para comportamento de interface (menu, modal, toast e validação visual).
+
 ## Funcionalidades
 
 A plataforma está organizada em três páginas principais:
@@ -51,6 +89,7 @@ A plataforma está organizada em três páginas principais:
 | `index.html` | Página institucional: apresentação, missão/visão/valores, história, indicadores, destaques de projetos, voluntariado, doações, notícias, galeria e contato. |
 | `projetos.html` | Lista detalhada dos projetos sociais, com objetivos, público beneficiado, indicadores, resultados e relatórios de transparência. |
 | `cadastro.html` | Formulário HTML5 completo para cadastro de voluntários e apoiadores. |
+| `guia-de-estilo.html` | Guia do design system: cores, tipografia, espaçamento, grid e componentes. |
 
 Todas as funcionalidades de administração (login, cadastro de projetos pelo
 administrador, banco de dados, emissão real de certificados, gateway de
@@ -185,25 +224,10 @@ em um cenário real.
 
 ## Imagens utilizadas
 
-Todas as imagens do projeto são **ilustrativas (placeholders)**, geradas
-especificamente para esta entrega, para que o projeto funcione visualmente
-sem depender de fotos reais. Elas estão organizadas em:
-
-- `assets/images/logo/` — logotipo do Instituto Florescer;
-- `assets/images/projetos/` — imagens de capa de cada projeto social;
-- `assets/images/equipe/` — imagens de voluntários/equipe;
-- `assets/images/galeria/` — imagens da seção de galeria da página inicial.
-
-**Antes de publicar oficialmente o site**, substitua essas imagens por
-fotografias reais da organização, mantendo:
-- os mesmos nomes de arquivo (para não quebrar os caminhos no HTML), **ou**
-- atualizando os atributos `src` correspondentes caso troque os nomes;
-- sempre com autorização de uso de imagem das pessoas retratadas;
-- mantendo os textos de `alt` atualizados e descritivos.
+Foram utilizadas imagens dispobíveis em sites do google. Nenhuma imagem representa o Instituto Fictício que foi criado.
 
 
 ## Autoria
 
 Projeto acadêmico desenvolvido para fins de estudo de HTML5, CSS3 e
-JavaScript, com o apoio da IA Claude (Anthropic) como orientadora técnica no
-processo de criação e documentação.
+JavaScript.

@@ -22,13 +22,29 @@
                      width="48" height="48">
                 <span class="logotipo__texto">Instituto Florescer</span>
             </a>
-            <nav class="navegacao-principal" aria-label="Navegação principal">
+
+            <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
+                <span class="menu-toggle__barra"></span><span class="menu-toggle__barra"></span><span class="menu-toggle__barra"></span>
+            </button>
+
+            <nav class="navegacao-principal" id="menu-principal" aria-label="Navegação principal">
                 <ul class="navegacao-principal__lista">
                     <li><a href="index.html">Início</a></li>
-                    <li><a href="projetos.html" aria-current="page">Projetos</a></li>
+                    <li class="tem-submenu">
+                        <button type="button" class="submenu-botao" aria-expanded="false" aria-haspopup="true">Projetos</button>
+                        <ul class="submenu">
+                            <li><a href="projetos.html" aria-current="page">Todos os projetos</a></li>
+                            <li><a href="projetos.html#projeto-educar-para-crescer">Educar para Crescer</a></li>
+                            <li><a href="projetos.html#projeto-caminhos-da-inclusao">Caminhos da Inclusão</a></li>
+                            <li><a href="projetos.html#projeto-apoio-as-familias">Apoio às Famílias</a></li>
+                            <li><a href="projetos.html#projeto-horta-comunitaria-raizes">Horta Comunitária Raízes</a></li>
+                            <li><a href="projetos.html#projeto-jovem-aprendiz-digital">Jovem Aprendiz Digital</a></li>
+                        </ul>
+                    </li>
                     <li><a href="cadastro.html">Cadastre-se</a></li>
-                    <li><a href="index.html#secao-doacoes">Doe agora</a></li>
+                    <li><a href="index.html#secao-doacoes" class="botao-doar">Doe agora</a></li>
                     <li><a href="index.html#secao-contato">Contato</a></li>
+                    <li><a href="guia-de-estilo.html">Guia de estilo</a></li>
                 </ul>
             </nav>
         </div>
@@ -76,7 +92,7 @@
                         <figcaption>Atividade de reforço escolar na E.M. Jardim das Rosas.</figcaption>
                     </figure>
                     <div class="cartao-projeto__conteudo">
-                        <p class="cartao-projeto__categoria">Categoria: Educação</p>
+                        <p class="cartao-projeto__categoria"><span class="badge badge--educacao">Educação</span></p>
                         <h3>Educar para Crescer</h3>
                         <p>
                             Reforço escolar, incentivo à leitura e acompanhamento pedagógico para
@@ -110,7 +126,7 @@
                         <figcaption>Oficina de capacitação em informática básica.</figcaption>
                     </figure>
                     <div class="cartao-projeto__conteudo">
-                        <p class="cartao-projeto__categoria">Categoria: Inclusão social</p>
+                        <p class="cartao-projeto__categoria"><span class="badge badge--inclusao">Inclusão social</span></p>
                         <h3>Caminhos da Inclusão</h3>
                         <p>
                             Oficinas de capacitação profissional e apoio à colocação no mercado de
@@ -144,7 +160,7 @@
                         <figcaption>Atendimento socioassistencial às famílias da comunidade.</figcaption>
                     </figure>
                     <div class="cartao-projeto__conteudo">
-                        <p class="cartao-projeto__categoria">Categoria: Apoio a famílias</p>
+                        <p class="cartao-projeto__categoria"><span class="badge badge--familias">Apoio a famílias</span></p>
                         <h3>Rede de Apoio Familiar</h3>
                         <p>
                             Atendimento socioassistencial, orientação sobre direitos e acesso a
@@ -178,7 +194,7 @@
                         <figcaption>Colheita coletiva na horta comunitária Raízes.</figcaption>
                     </figure>
                     <div class="cartao-projeto__conteudo">
-                        <p class="cartao-projeto__categoria">Categoria: Sustentabilidade</p>
+                        <p class="cartao-projeto__categoria"><span class="badge badge--sustentabilidade">Sustentabilidade</span></p>
                         <h3>Horta Comunitária Raízes</h3>
                         <p>
                             Hortas coletivas manejadas por famílias da comunidade, que geram renda
@@ -212,7 +228,7 @@
                         <figcaption>Turma do curso introdutório de tecnologia, edição 2025.</figcaption>
                     </figure>
                     <div class="cartao-projeto__conteudo">
-                        <p class="cartao-projeto__categoria">Categoria: Desenvolvimento comunitário</p>
+                        <p class="cartao-projeto__categoria"><span class="badge badge--comunidade">Desenvolvimento comunitário</span></p>
                         <h3>Jovem Aprendiz Digital</h3>
                         <p>
                             Curso introdutório de informática e primeiros passos em programação
@@ -311,6 +327,8 @@
         </div>
     </footer>
 
+    
+    <div class="toast-area" id="toast-area" aria-live="polite"></div>
     <script src="assets/js/script.js"></script>
 </body>
 </html>

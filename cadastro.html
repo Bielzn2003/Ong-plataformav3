@@ -22,13 +22,29 @@
                      width="48" height="48">
                 <span class="logotipo__texto">Instituto Florescer</span>
             </a>
-            <nav class="navegacao-principal" aria-label="Navegação principal">
+
+            <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
+                <span class="menu-toggle__barra"></span><span class="menu-toggle__barra"></span><span class="menu-toggle__barra"></span>
+            </button>
+
+            <nav class="navegacao-principal" id="menu-principal" aria-label="Navegação principal">
                 <ul class="navegacao-principal__lista">
                     <li><a href="index.html">Início</a></li>
-                    <li><a href="projetos.html">Projetos</a></li>
+                    <li class="tem-submenu">
+                        <button type="button" class="submenu-botao" aria-expanded="false" aria-haspopup="true">Projetos</button>
+                        <ul class="submenu">
+                            <li><a href="projetos.html">Todos os projetos</a></li>
+                            <li><a href="projetos.html#projeto-educar-para-crescer">Educar para Crescer</a></li>
+                            <li><a href="projetos.html#projeto-caminhos-da-inclusao">Caminhos da Inclusão</a></li>
+                            <li><a href="projetos.html#projeto-apoio-as-familias">Apoio às Famílias</a></li>
+                            <li><a href="projetos.html#projeto-horta-comunitaria-raizes">Horta Comunitária Raízes</a></li>
+                            <li><a href="projetos.html#projeto-jovem-aprendiz-digital">Jovem Aprendiz Digital</a></li>
+                        </ul>
+                    </li>
                     <li><a href="cadastro.html" aria-current="page">Cadastre-se</a></li>
-                    <li><a href="index.html#secao-doacoes">Doe agora</a></li>
+                    <li><a href="index.html#secao-doacoes" class="botao-doar">Doe agora</a></li>
                     <li><a href="index.html#secao-contato">Contato</a></li>
+                    <li><a href="guia-de-estilo.html">Guia de estilo</a></li>
                 </ul>
             </nav>
         </div>
@@ -61,6 +77,15 @@
                 <!-- aponta
                     para uma página de confirmação estática (confirmacao.html), apenas para
                     fins de demonstração da estrutura HTML5.-->
+                <div class="alerta alerta--info" role="note">
+                    <div class="alerta__conteudo"><span class="alerta__titulo">Antes de começar</span>
+                    <p>Leva cerca de 3 minutos. Os dados são fictícios nesta demonstração e nada é enviado.</p></div>
+                </div>
+                <div class="alerta alerta--erro" id="alerta-erro-form" role="alert" hidden>
+                    <div class="alerta__conteudo"><span class="alerta__titulo">Não foi possível enviar</span>
+                    <p>Há campos obrigatórios vazios ou inválidos. Eles estão destacados em vermelho abaixo.</p></div>
+                    <button type="button" class="alerta__fechar" aria-label="Fechar aviso">&times;</button>
+                </div>
                 <form action="confirmacao.html" method="get" aria-describedby="descricao-formulario" novalidate>
 
                     <!-- dados pessoais -->
@@ -311,6 +336,17 @@
             </div>
         </section>
 
+    
+        <div class="modal" id="modal-sucesso" role="dialog" aria-modal="true" aria-labelledby="titulo-modal-sucesso">
+            <div class="modal__caixa">
+                <h2 id="titulo-modal-sucesso">Cadastro enviado</h2>
+                <p>Obrigado por se juntar ao Instituto Florescer. Entraremos em contato por e-mail em até 5 dias úteis.</p>
+                <div class="modal__acoes">
+                    <button type="button" class="botao botao--secundario" data-fechar-modal>Fechar</button>
+                    <a href="projetos.html" class="botao botao--primario">Conhecer os projetos</a>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer class="rodape-site">
@@ -334,6 +370,8 @@
         </div>
     </footer>
 
+    
+    <div class="toast-area" id="toast-area" aria-live="polite"></div>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
